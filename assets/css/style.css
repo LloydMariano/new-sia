@@ -8476,17 +8476,19 @@ body.menu-bottom #collapse-menu {
   bottom: 50px;
   opacity: 1; }
 
-.edit{
-  margin-left: -20px;
-}
+  .view{
+    border: none;
+    font-size: larger;
+    background-color: white;
+  }
 .update{
   border: none;
-  font-size: x-large;
+  font-size: larger;
   background-color: white;
 }
 .delete{
   border: none;
-  font-size: x-large;
+  font-size: larger;
   background-color: white;
 }
 .form{
@@ -8509,6 +8511,10 @@ body.menu-bottom #collapse-menu {
   text-align: end;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+.show-notification{
+  padding-bottom: 15px;
+
 }
 /**  =====================
       Theme-Buttons css start

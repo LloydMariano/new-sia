@@ -7,14 +7,13 @@ $customer_name = $_POST ['customer_name'];
 $trans_code = $_POST ['trans_code'];
 $total = $_POST ['total'];
 $trans_date = $_POST ['trans_date'];
-$note = $_POST ['note'];
 
 
 
 if(isset($_POST['add-invoice'])){
     try{
 
-$query = "INSERT INTO invoice_tbl (customer_name, trans_code, total, trans_date, note) VALUES ('$customer_name', '$trans_code', '$total', '$trans_date', '$note')";
+$query = "INSERT INTO invoice_tbl (customer_name, trans_code, total, trans_date) VALUES ('$customer_name', '$trans_code', '$total', '$trans_date'   )";
 
 $dbh->exec($query);
 }catch(PDOException $e){

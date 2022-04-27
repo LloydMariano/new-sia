@@ -4,17 +4,16 @@ session_start();
 require_once 'controller/config.php';
 
 $prod_name = $_POST ['prod_name'];
-$prod_code = $_POST ['prod_code'];
+$prod_price = $_POST ['prod_price'];
 $prod_qty = $_POST ['prod_qty'];
+$date_received = $_POST ['date_received'];
 $prod_exp = $_POST ['prod_exp'];
-$prod_des = $_POST ['prod_des'];
-
 
 
 if(isset($_POST['add-prod'])){
     try{
 
-$query = "INSERT INTO product_tbl (prod_name, prod_code, prod_qty, prod_exp, prod_des) VALUES ('$prod_name', '$prod_code', '$prod_qty', '$prod_exp', '$prod_des')";
+$query = "INSERT INTO product_tbl (prod_name, prod_price, prod_qty, prod_exp, date_received) VALUES ('$prod_name', '$prod_price', '$prod_qty', '$prod_exp, $date_received )";
 
 $dbh->exec($query);
 }catch(PDOException $e){

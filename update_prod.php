@@ -5,23 +5,24 @@ require_once 'php/controller/config.php';
 if(isset($_POST['update'])){
 
 $prod_id = intval($_GET['id']);
-$prod_code  = $_POST ['prod_code'];
-$prod_name = $_POST ['prod_name'];
+$prod_name  = $_POST ['prod_name'];
+$prod_price = $_POST ['prod_price'];
 $prod_qty = $_POST ['prod_qty'];
+$date_received = $_POST ['date_received'];
 $prod_exp = $_POST ['prod_exp'];
-$prod_des = $_POST ['prod_des'];
 
 
-$sql = " UPDATE product_tbl SET prod_code=:prod_code, prod_name=:prod_name, prod_qty=:prod_qty,
-         prod_exp=:prod_exp, prod_des=:prod_des WHERE product_id=:uid";
+
+$sql = " UPDATE product_tbl SET prod_name=:prod_name, prod_price=:prod_price, prod_qty=:prod_qty,
+        date_received=:date_received, prod_exp=:prod_exp  WHERE product_id=:uid";
 
 $query = $dbh->prepare($sql);
 
-$query->bindParam('prod_code',$prod_code,PDO::PARAM_STR);
-$query->bindParam('prod_name',$prod_name ,PDO::PARAM_STR);
+$query->bindParam('prod_name',$prod_name,PDO::PARAM_STR);
+$query->bindParam('prod_price',$prod_price ,PDO::PARAM_STR);
 $query->bindParam('prod_qty',$prod_qty ,PDO::PARAM_STR);
+$query->bindParam('date_received',$date_received ,PDO::PARAM_STR);
 $query->bindParam('prod_exp',$prod_exp ,PDO::PARAM_STR);
-$query->bindParam('prod_des',$prod_des ,PDO::PARAM_STR);
 $query->bindParam('uid',$prod_id, PDO::PARAM_STR);
 
 $query->execute();
@@ -106,8 +107,8 @@ if($query->rowCount() >0)
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder="PRODUCT CODE" name="prod_code"
-                                        value="<?php echo htmlentities($result->prod_code); ?>">
+                                        placeholder="PRODUCT PRICE" name="prod_price"
+                                        value="<?php echo htmlentities($result->prod_price); ?>">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
@@ -115,15 +116,15 @@ if($query->rowCount() >0)
                                         value="<?php echo htmlentities($result->prod_qty); ?>">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="date" class="form-control"
+                                        placeholder="Date Received" name="date_received" 
+                                        value="<?php echo htmlentities($result->date_received); ?>">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="date" class="form-control"
                                         placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" 
                                         value="<?php echo htmlentities($result->prod_exp); ?>">
                                     </div>
-                                        <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" class="form-control"
-                                            placeholder="PRODUCT DESCRIPTION" name="prod_des"
-                                            value="<?php echo htmlentities($result->prod_des); ?>"></textarea>
-                                        </div>
                                     </div>
                                     
                                 </div>
@@ -131,7 +132,12 @@ if($query->rowCount() >0)
  <?php }} ?>  
                         <div class="button">
                             <button  name="update" class="btn btn-success btn-round">Submit</button>
-                            <button class="btn btn-danger btn-round">Cancel</button>
+                            <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
+                            <script>
+                                     function goBack() {
+                                               window.history.back();
+                                       }
+              </script>
                         </div>
                             </form>
                              

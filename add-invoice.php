@@ -62,13 +62,9 @@
                                         placeholder=" TOTAL PRODUCT AMOUNT" name="total">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="date" class="form-control"
                                         placeholder="TRANSACTION DATE" name="trans_date">
                                     </div>
-                                        <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" class="form-control"
-                                            placeholder="ADD NOTE" name="note"></textarea>
-                                        </div>
                                     </div>
                                     
                                 </div>
@@ -76,7 +72,12 @@
 
                         <div class="button">
                             <button name="add-invoice" class="btn btn-success btn-round">Submit</button>
-                            <button class="btn btn-danger btn-round">Cancel</button>
+                            <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
+                            <script>
+                                     function goBack() {
+                                               window.history.back();
+                                       }
+              </script>
                         </div>
                             </form>
                              

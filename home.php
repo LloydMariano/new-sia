@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+
+<?php 
+//starting the session
+session_start();
+?>
+
+<?php  require_once 'php/controller/config.php'; ?>
+
+      <?php include 'side-bar.php'; ?>
+     
+      
     <title>AMK Inventory Management System </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,97 +38,41 @@
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
 
-      <?php include 'side-bar.php'; ?>
-
  </head>
-
   <body>
-                    <div class="pcoded-content">
+                   <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
 
                                     <div class="page-body">
                                       <div class="row">
+            <?php
+                                      
+  $sql = "SELECT * from  product_tbl ";
+  $query = $dbh -> prepare($sql);
+  $query->execute();
+  $results=$query->fetchAll(PDO::FETCH_OBJ);
+  $cnt=1;
+  if($query->rowCount() > 0)
+  {
+  foreach($results as $result)
+  {
 
+  ?>                                     
+        
                                             <!-- order-card start -->
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Online Items</h6>
-                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>1</span></h2>
+                                                        <h5 class="m-b-20"><?php echo htmlentities($result->prod_name); ?></span></h5>
+                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span><?php echo htmlentities($result->prod_qty); ?></span></h2>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card bg-c-green order-card">
-                                                    <div class="card-block">
-                                                        <h6 class="m-b-20">Total Items</h6>
-                                                        <h2 class="text-right"><i class="ti-package f-left"></i><span>3</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card bg-c-yellow order-card">
-                                                    <div class="card-block">
-                                                        <h6 class="m-b-20">Out of Stock</h6>
-                                                        <h2 class="text-right"><i class="ti-reload f-left"></i><span>1</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card bg-c-pink order-card">
-                                                    <div class="card-block">
-                                                        <h6 class="m-b-20">Deleted Items</h6>
-                                                        <h2 class="text-right"><i class="ti-trash f-left"></i><span>1</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- order-card end -->
-
-											<!-- tabs card start -->
-                                            <div class="col-sm-12">
-                                                <div class="card tabs-card">
-                                                    <div class="card-block p-0">
-                                                        <!-- Nav tabs -->
-                                                       
-                                                        <!-- Tab panes -->
-                                                        <div class="tab-content card-block">
-                                                            <div class="tab-pane active" id="home3" role="tabpanel">
-
-                                                                <div class="table-responsive">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Product Code</th>
-                                                                            <th>Product Name</th>
-                                                                            <th>Status</th>
-                                                                            <th>Date</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>PNG002653</td>
-                                                                            <td>Couch</td>
-                                                                            <td><span class="label bg-c-yellow">Out Of Stock</span></td>
-                                                                            <td>2022-04-19</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                           
-                                                                        </tr>
-                                                                      
-                                                                    </table>
-                                                                </div>   
-                                        </div>
-                                    </div>
-
-                                    <div id="styleSelector">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                            </div>  
+          <?php $cnt=$cnt+1; }} ?>   
+                                        <!-- order-card end -->
+ 
 
         <!-- Warning Section Starts -->
         <!-- Older IE warning message -->

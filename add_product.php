@@ -55,20 +55,21 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder="PRODUCT CODE" name="prod_code">
+                                        placeholder="PRODUCT PRICE" name="prod_price">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="PRODUCT QUANTITY" name="prod_qty">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="date" class="form-control"
+                                        placeholder="Date Received" name="date_received">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="date" class="form-control"
                                         placeholder="PRODUCT EXPIRATION DATE" name="prod_exp">
                                     </div>
-                                        <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" class="form-control"
-                                            placeholder="PRODUCT DESCRIPTION" name="prod_des"></textarea>
-                                        </div>
+                                
                                     </div>
                                     
                                 </div>
@@ -76,7 +77,13 @@
 
                         <div class="button">
                             <button  name="add-prod" class="btn btn-success btn-round">Submit</button>
-                            <button class="btn btn-danger btn-round">Cancel</button>
+                            
+                            <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
+                            <script>
+                                     function goBack() {
+                                               window.history.back();
+                                       }
+              </script>
                         </div>
                             </form>
                              

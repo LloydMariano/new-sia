@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 
 <head>
@@ -41,7 +42,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="signup-card card-block auth-body mr-auto ml-auto">
-                        <form class="md-float-material">
+                        <form action="php/signup.php" method="POST" class="md-float-material">
                         
                             <div class="auth-box">
                                 <div class="row m-b-20">
@@ -51,41 +52,38 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Choose Username">
+                                    <input type="text" class="form-control" name="firstname" placeholder="Firstname" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Your Email Address">
+                                    <input type="text" class="form-control" name="lastname"  placeholder="Lastname" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Choose Password">
+                                    <input type="text" class="form-control" name="email" placeholder="Email Address" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                                     <span class="md-line"></span>
                                 </div>
-                                <div class="row m-t-25 text-left">
+                                <?php
+					//checking if the session 'success' is set.
+					if(ISSET($_SESSION['success'])){
+				?>
+				<!-- Display regostration success message -->
+				<div class="alert alert-success"><?php echo $_SESSION['success']?></div>
+				<?php
+					//Unsetting the 'success' session after displaying the message. 
+					unset($_SESSION['success']);
+					}
+				?>                    
+                                    <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <div class="checkbox-fade fade-in-primary">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">I read and accept <a href="#">Terms &amp; Conditions.</a></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                       
-                                    </div>
-                                </div>
-                                <div class="row m-t-30">
-                                    <div class="col-md-12">
-                                        <a href="index.html">  <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button></a>
+                                      <button type="submit" name="sign_btn" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>
                                     </div>
                                 </div>
-                                <a href="auth-normal-sign-in.html"> Already have an account</a>
+                                <a href="index.php"> Already have an account</a>
                             </div>
                         </form>
                         <!-- end of form -->

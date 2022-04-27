@@ -58,10 +58,9 @@
                                                 <th>Transaction Code</th>
                                                 <th>Total Amount</th>
                                                 <th>Date of transaction</th>
-                                                <th>Note</th>
                                                 <th>Action</th>
                                             </tr>
-                                            <?php
+  <?php
   $sql = "SELECT * from  invoice_tbl ";
   $query = $dbh -> prepare($sql);
   $query->execute();
@@ -78,7 +77,6 @@
                                             <td><?php echo htmlentities($result->trans_code); ?></td>
                                             <td><?php echo htmlentities($result->total); ?></td>
                                             <td><?php echo htmlentities($result->trans_date); ?></td>
-                                            <td><?php echo htmlentities($result->note); ?></td>
                                                
                                                 <td>
                                                     <div class="edit">

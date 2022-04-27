@@ -9,11 +9,10 @@ $customer_name = $_POST ['customer_name'];
 $trans_code = $_POST ['trans_code'];
 $total = $_POST ['total'];
 $trans_date= $_POST ['trans_date'];
-$note= $_POST ['note'];
 
 
 $sql = " UPDATE invoice_tbl SET customer_name=:customer_name, trans_code=:trans_code, total=:total,
-         trans_date=:trans_date, note=:note WHERE invoice_id=:uid";
+         trans_date=:trans_date WHERE invoice_id=:uid";
 
 $query = $dbh->prepare($sql);
 
@@ -21,7 +20,6 @@ $query->bindParam('customer_name',$customer_name,PDO::PARAM_STR);
 $query->bindParam('trans_code',$trans_code,PDO::PARAM_STR);
 $query->bindParam('total',$total,PDO::PARAM_STR);
 $query->bindParam('trans_date',$trans_date,PDO::PARAM_STR);
-$query->bindParam('note',$note,PDO::PARAM_STR);
 $query->bindParam('uid',$voice_id,PDO::PARAM_STR);
 
 $query->execute();
@@ -118,11 +116,6 @@ if($query->rowCount() >0)
                                         placeholder="TRANSACTION DATE" name="trans_date" 
                                         value="<?php echo htmlentities($result->trans_date); ?>">
                                     </div>
-                                        <div class="col-sm-10">
-                                            <textarea rows="5" cols="5" class="form-control"
-                                            placeholder="ADD NOTE" name="note"
-                                            value="<?php echo htmlentities($result->note); ?>"></textarea>
-                                        </div>
                                     </div>
                                     
                                 </div>
@@ -130,7 +123,12 @@ if($query->rowCount() >0)
  <?php }} ?>  
                         <div class="button">
                             <button  name="update" class="btn btn-success btn-round">Submit</button>
-                            <button class="btn btn-danger btn-round">Cancel</button>
+                            <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
+                            <script>
+                                     function goBack() {
+                                               window.history.back();
+                                       }
+              </script>
                         </div>
                             </form>
                              

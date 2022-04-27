@@ -84,8 +84,8 @@
                        <ul class="nav-right">
                            <li class="header-notification">
                                <a href="#!">
-                                   <i class="ti-bell"></i>
-                                   <span class="badge bg-c-pink"></span>
+                                   <!-- <i class="ti-bell"></i>
+                                   <span class="badge bg-c-pink"></span> -->
                                </a>
                                <ul class="show-notification">
                                    <li>
@@ -107,7 +107,7 @@
                                </a>
                                <ul class="show-notification profile-notification">
                                    <li>
-                                       <a href="index.php">
+                                       <a href="php/logout.php">
                                        <i class="ti-layout-sidebar-left"></i> Logout
                                    </a>
                                    </li>

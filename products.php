@@ -47,20 +47,7 @@
                     <div class="card tabs-card">
                         <div class="card-block p-0">
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs md-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-check-circle"></i>Online Items</a>
-                                    <div class="slide"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-remove"></i>Out of Stock</a>
-                                    <div class="slide"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><i class="fa fa-trash"></i>Deleted Items</a>
-                                    <div class="slide"></div>
-                                </li>
-                            </ul>
+                      
                             <!-- Tab panes -->
                             <div class="tab-content card-block">
                                 <div class="tab-pane active" id="home3" role="tabpanel">
@@ -69,11 +56,11 @@
                                         <table class="table">
                                             <tr>
                         
-                                            <th>Product Code</th>
-                                                <th>Product Name</th>
+                                            <th>Product Name</th>
+                                                <th>Product Price</th>
                                                 <th>Product Quantity</th>
+                                                <th>Date Received</th>
                                                 <th>Expiration Date</th>
-                                                <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
 <?php
@@ -91,10 +78,10 @@
                                             <tr>
 
                                                 <td><?php echo htmlentities($result->prod_name); ?></td>
-                                                <td><?php echo htmlentities($result->prod_code); ?></td>
+                                                <td><?php echo htmlentities($result->prod_price); ?></td>
                                                 <td><?php echo htmlentities($result->prod_qty); ?></td>
+                                                <td><?php echo htmlentities($result->date_received); ?></td>
                                                 <td><?php echo htmlentities($result->prod_exp); ?></td>
-                                                <td><?php echo htmlentities($result->prod_des); ?></td>
                                                 <td>
                                                     <div class="edit">
                                                         <a class="up_btn" href="update_prod.php?id=<?php echo htmlentities($result->product_id); ?>"> <button class="update"><i class="ti-pencil-alt"></i></button></a>
@@ -106,56 +93,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="profile3" role="tabpanel">
-
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <tr>
-                                                <th>Product Code</th>
-                                                <th>Product Name</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                            <tr>
-                                                <td>PNG002653</td>
-                                                <td>Couch</td>
-                                                <td><span class="label bg-c-yellow">Out Of Stock</span></td>
-                                                <td> <div class="edit">
-                                                    <button class="update"><i class="ti-pencil-alt"></i></button>
-                                                    <button class="delete"><i class="ti-trash" style="size: large;"></i></button>
-                                                    <button class="update"><i class="ti-eye"></i></button>
-                                                </div>
-                                            </td>
-                                            </tr>
-                                        </table>
-                                </div>
-                                </div>
-                                <div class="tab-pane" id="messages3" role="tabpanel">
-
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <tr>
-            
-                                                <th>Product Code</th>
-                                                <th>Product Name</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                            <tr>
-                                                <td>PNG002413</td>
-                                                <td>electric fan</td>
-                                                <td><span class="label label-danger">Deleted</span></td>
-                                                <td> <div class="edit">
-                                                    <button class="update"><i class="ti-pencil-alt"></i></button>
-                                                    <button class="delete"><i class="ti-trash" style="size: large;"></i></button>
-                                                    <button class="update"><i class="ti-eye"></i></button>
-                                                </div>
-                                            </td>
-                                            </tr>
-                                        </table>
-                                </div>
-                                </div>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>

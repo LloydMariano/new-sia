@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <?php require_once 'php/controller/config.php';
+  
+
+    ?>
     <title>AMK Inventory Management System </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,8 +63,8 @@
                                </div>
                            </div>
                        </div>
-                       <a href="home.php">INVENTORY MANAGEMENT
-                       </a>
+                       <a href="home.php">INVENTORY MANAGEMENT</a>
+                        
                        <a class="mobile-options">
                            <i class="ti-more"></i>
                        </a>
@@ -71,7 +75,7 @@
                            <li>
                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                            </li>
-                           <li class="header-search">
+                           <!-- <li class="header-search">
                                <div class="main-search morphsearch-search">
                                    <div class="input-group">
                                        <span class="input-group-addon search-close"><i class="ti-close"></i></span>
@@ -79,32 +83,41 @@
                                        <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
                                    </div>
                                </div>
-                           </li>
+                           </li> -->
                        </ul>
                        <ul class="nav-right">
-                           <li class="header-notification">
-                               <a href="#!">
+                           <li>
+                           <!-- <li class="header-notification"> -->
+                               <a>  <!-- <a href="#!">     -->
                                    <!-- <i class="ti-bell"></i>
                                    <span class="badge bg-c-pink"></span> -->
+                                   <span style="margin-right: 320px">Amk Variety Store</span>
                                </a>
-                               <ul class="show-notification">
+                               <!-- <ul class="show-notification">
                                    <li>
                                        <h6>Notifications</h6>
                                    <hr></hr>
                                    </li>
                                    <li>
-                                       
-                                   </li>
-                                   
-                                
-                               </ul>
+                        
+                                   </li>  
+                               </ul> -->
                            </li>
-                           
+   
+   
+   
                            <li class="user-profile header-notification">
                                <a href="#!">
-                                <span>Amk Variety Store</span>
+               <?php
+				$id = $_SESSION['user'];
+				$sql = $dbh->prepare("SELECT * FROM `user_tbl` WHERE `user_id`='$id'");
+				$sql->execute();
+				$fetch = $sql->fetch();
+	?>
+                       <span><?php echo $fetch['firstname']." ". $fetch['lastname']?> </span>   
                                    <i class="ti-angle-down"></i>
                                </a>
+
                                <ul class="show-notification profile-notification">
                                    <li>
                                        <a href="php/logout.php">

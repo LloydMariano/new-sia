@@ -1,35 +1,34 @@
-<?php
 
-	//starting the session
+<?php
 	session_start();
- 
-	//including the database connection
-    require_once 'controller/config.php';
+	require_once 'controller/config.php';
  
 	if(ISSET($_POST['sign_btn'])){
-		// Setting variables
-        $firstname = $_POST ['firstname'];
-        $lastname = $_POST ['lastname'];
-        $email = $_POST ['email'];
-        $password = $_POST ['password'];
-        
- 
-		// Insertion Query
-		$query = "INSERT INTO `user_tbl` (firstname, lastname, email, password) VALUES(:firstname, :lastname, :email, :password)";
-		$stmt = $dbh->prepare($query);
-		$stmt->bindParam(':firstname', $firstname);
-		$stmt->bindParam(':lastname', $lastname);
-        $stmt->bindParam(':email', $email);
-		$stmt->bindParam(':password', $password);
-		
- 
-		// Check if the execution of query is success
-		if($stmt->execute()){
-			//setting a 'success' session to save our insertion success message.
-			$_SESSION['success'] = "Successfully created an account";
-			//redirecting to the index.php 
-			header('location: /new-sia/auth-sign-up.php');
+		if($_POST['firstname'] != "" || $_POST['lastname'] != "" || $_POST['email'] != "" || $_POST['password'] != ""){
+			try{
+				$firstname = $_POST ['firstname'];
+        		$lastname = $_POST ['lastname'];
+        		$email = $_POST ['email'];
+				// md5 encrypted
+				// $password = md5($_POST['password']);
+				$password = $_POST['password'];
+
+				// $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+
+				$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$sql = "INSERT INTO `user_tbl` VALUES ('', '$firstname', '$lastname', '$email', '$password ')";
+				$dbh->exec($sql);	
+			}catch(PDOException $e){
+				echo $e->getMessage();
+			}
+			$_SESSION['message']=array("text"=>"User successfully created.","alert"=>"info");
+			$dbh = null;
+			header('location: /new-sia/index.php');
+		}else{
+			echo "
+				<script>alert('Please fill up the required field!')</script>
+				<script>window.location = '/new-sia/auth-sign-up.php'</script>
+			";
 		}
 	}
 ?>
-

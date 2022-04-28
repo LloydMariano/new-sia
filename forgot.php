@@ -45,12 +45,12 @@
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
 
-                        <form  action="php/login.php" method="POST" class="md-float-material">
+                        <form  action="" method="POST" class="md-float-material">
                             
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="text-left txt-primary">Forgot Password</h3>
                                     </div>
                                 </div>
               <hr/>
@@ -72,11 +72,11 @@
 	?>
                   
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="email"  placeholder="Your Email Address" required >
+                                    <input type="text" class="form-control" name="email"  placeholder="Email" required >
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password"  placeholder="Password" required>
+                                    <input type="password" class="form-control" name="password"  placeholder="New Password" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <?php
@@ -92,22 +92,13 @@
 				?>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
-                                        <div class="checkbox-fade fade-in-primary">
-                                            <!-- <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label> -->
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="forgot.php" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                        
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
-                                        <a href="auth-sign-up.php"><button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up</button></a>
+                                        <button name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Save</button>
+                                        <a href="index.php"><button type="button" class="btn btn-danger btn-md btn-block waves-effect text-center m-b-20">Cancel</button></a>
                                     </div>
                                 </div>
 
@@ -123,51 +114,7 @@
         </div>
         <!-- end of container-fluid -->
     </section>
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-    <!-- Warning Section Ends -->
-    <!-- Required Jquery -->
+ 
     <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>

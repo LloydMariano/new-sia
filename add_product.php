@@ -54,11 +54,11 @@
                                         placeholder="PRODUCT NAME" name="prod_name">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="number" class="form-control"
                                         placeholder="PRODUCT PRICE" name="prod_price">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="number" class="form-control"
                                         placeholder="PRODUCT QUANTITY" name="prod_qty">
                                     </div>
                                     <div class="col-sm-6">

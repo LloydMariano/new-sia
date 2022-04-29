@@ -106,12 +106,12 @@ if($query->rowCount() >0)
                                         value="<?php echo htmlentities($result->prod_name); ?>">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="number" class="form-control"
                                         placeholder="PRODUCT PRICE" name="prod_price"
                                         value="<?php echo htmlentities($result->prod_price); ?>">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control"
+                                        <input type="number" class="form-control"
                                         placeholder="PRODUCT QUANTITY" name="prod_qty"
                                         value="<?php echo htmlentities($result->prod_qty); ?>">
                                     </div>

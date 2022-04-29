@@ -13,7 +13,7 @@ $prod_exp = $_POST ['prod_exp'];
 if(isset($_POST['add-prod'])){
     try{
 
-$query = "INSERT INTO product_tbl (prod_name, prod_price, prod_qty, prod_exp, date_received) VALUES ('$prod_name', '$prod_price', '$prod_qty', '$prod_exp, $date_received )";
+$query = "INSERT INTO product_tbl (prod_name, prod_price, prod_qty, date_received, prod_exp) VALUES ('$prod_name', '$prod_price', '$prod_qty', '$date_received' , '$prod_exp' )";
 
 $dbh->exec($query);
 }catch(PDOException $e){

@@ -1,20 +1,39 @@
-<?php 
-require_once 'php/controller/config.php';
-?>
+<?php
 
+require_once 'php/controller/config.php';
+
+if(isset($_POST['change-pass'])){
+
+$user_id = intval($_GET['id']);
+$password  = $_POST ['password'];
+
+$sql = " UPDATE user_tbl SET password=:password WHERE user_id=:uid";
+
+$query = $dbh->prepare($sql);
+
+$query->bindParam('password',$password,PDO::PARAM_STR);
+$query->bindParam('uid',$user_id, PDO::PARAM_STR);
+
+$query->execute();
+echo "<script>alert('Record Updated successfully');</script>";
+// Code for redirection
+echo "<script>window.location.href='/new-sia/index.php'</script>";
+}
+
+?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <title>AMK Inventory Management System </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]
-     Meta -->
+      <![endif]-->
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,30 +67,37 @@ require_once 'php/controller/config.php';
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
-     <?php
-  $sql = "SELECT * from  user_tbl ";
-  $query = $dbh -> prepare($sql);
-  $query->execute();
-  $results=$query->fetchAll(PDO::FETCH_OBJ);
-  $cnt=1;
-  if($query->rowCount() > 0)
-  {
-  foreach($results as $result)
-  {
+  <?php 
 
-  ?>
-                        
+$user_id = intval($_GET['id']);
+$sql = "SELECT * from  user_tbl WHERE user_id=:uid";
+$query = $dbh->prepare($sql);
+$query->bindParam('uid',$user_id,PDO::PARAM_STR);
+$query->execute();
+$row=$query->fetchAll(PDO::FETCH_OBJ);
+
+
+$cnt=1;
+if($query->rowCount() >0)
+{
+  foreach($row as $result);
+{
+?>
+                        <form  action="" method="POST" class="md-float-material">
                             
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Enter your email</h3>
+                                        <h3 class="text-left txt-primary">Change Password</h3>
                                     </div>
                                 </div>
               <hr/>
-
+                                    <div class="input-group">
+                                    <p  class="form-control" > <?php echo htmlentities($result->email); ?> </p>
+                                    <span class="md-line"></span>
+                                </div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="email"  placeholder="Email Address" required >
+                                    <input type="password" class="form-control" name="password"  placeholder="New Password" required >
                                     <span class="md-line"></span>
                                 </div>
 			
@@ -80,15 +106,16 @@ require_once 'php/controller/config.php';
                                         
                                     </div>
                                 </div>
+         <?php }} ?>  
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                    <a  href="forgot_pass.php?id=<?php echo htmlentities($result->user_id); ?>"> <button  class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Next</button></a>
-                                        <a href="index.php"><button type="button" class="btn btn-danger btn-md btn-block waves-effect text-center m-b-20">Cancel</button></a>
+                                        <button name="change-pass" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Next</button>
+                                        <a href="forgot.php"><button type="button" class="btn btn-danger btn-md btn-block waves-effect text-center m-b-20">Cancel</button></a>
                                     </div>
                                 </div>
-       
+
                             </div>
-                        <?php $cnt=$cnt+1; }} ?>
+                        </form>
                         <!-- end of form -->
                     </div>
                     <!-- Authentication card end -->
@@ -112,4 +139,4 @@ require_once 'php/controller/config.php';
     <script type="text/javascript" src="assets/js/common-pages.js"></script>
 </body>
 
-</html> --> -->
+</html>

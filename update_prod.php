@@ -103,27 +103,27 @@ if($query->rowCount() >0)
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="PRODUCT NAME" name="prod_name"
-                                        value="<?php echo htmlentities($result->prod_name); ?>">
+                                        value="<?php echo htmlentities($result->prod_name); ?> " required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control"
                                         placeholder="PRODUCT PRICE" name="prod_price"
-                                        value="<?php echo htmlentities($result->prod_price); ?>">
+                                        value="<?php echo htmlentities($result->prod_price); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control"
                                         placeholder="PRODUCT QUANTITY" name="prod_qty"
-                                        value="<?php echo htmlentities($result->prod_qty); ?>">
+                                        value="<?php echo htmlentities($result->prod_qty); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="date" class="form-control"
                                         placeholder="Date Received" name="date_received" 
-                                        value="<?php echo htmlentities($result->date_received); ?>">
+                                        value="<?php echo htmlentities($result->date_received); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="date" class="form-control"
                                         placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" 
-                                        value="<?php echo htmlentities($result->prod_exp); ?>">
+                                        value="<?php echo htmlentities($result->prod_exp); ?>" required>
                                     </div>
                                     </div>
                                     

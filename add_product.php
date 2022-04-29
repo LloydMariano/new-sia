@@ -51,23 +51,23 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder="PRODUCT NAME" name="prod_name">
+                                        placeholder="PRODUCT NAME" name="prod_name" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT PRICE" name="prod_price">
+                                        placeholder="PRODUCT PRICE" name="prod_price" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT QUANTITY" name="prod_qty">
+                                        placeholder="PRODUCT QUANTITY" name="prod_qty" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="date" class="form-control"
-                                        placeholder="Date Received" name="date_received">
+                                        placeholder="Date Received" name="date_received" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="date" class="form-control"
-                                        placeholder="PRODUCT EXPIRATION DATE" name="prod_exp">
+                                        placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" required>
                                     </div>
                                 
                                     </div>

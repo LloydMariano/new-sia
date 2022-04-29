@@ -51,19 +51,19 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder="CUSTOMER NAME" name="customer_name">
+                                        placeholder="CUSTOMER NAME" name="customer_name" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder="TRANSACTION CODE" name="trans_code">
+                                        placeholder="TRANSACTION CODE" name="trans_code" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
-                                        placeholder=" TOTAL PRODUCT AMOUNT" name="total">
+                                        placeholder=" TOTAL PRODUCT AMOUNT" name="total" required >
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="date" class="form-control"
-                                        placeholder="TRANSACTION DATE" name="trans_date">
+                                        placeholder="TRANSACTION DATE" name="trans_date" required>
                                     </div>
                                     </div>
                                     

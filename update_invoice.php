@@ -99,22 +99,22 @@ if($query->rowCount() >0)
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="CUSTOMER NAME" name="customer_name"
-                                        value="<?php echo htmlentities($result->customer_name); ?>">
+                                        value="<?php echo htmlentities($result->customer_name); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="TRANSACTION CODE" name="trans_code"
-                                        value="<?php echo htmlentities($result->trans_code); ?>">
+                                        value="<?php echo htmlentities($result->trans_code); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="TOTAL AMOUNT PRODUCT" name="total"
-                                        value="<?php echo htmlentities($result->total); ?>">
+                                        value="<?php echo htmlentities($result->total); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control"
                                         placeholder="TRANSACTION DATE" name="trans_date" 
-                                        value="<?php echo htmlentities($result->trans_date); ?>">
+                                        value="<?php echo htmlentities($result->trans_date); ?>" required >
                                     </div>
                                     </div>
                                     

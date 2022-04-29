@@ -3,11 +3,6 @@
 
 <head>
 
-<?php 
-//starting the session
-session_start();
-?>
-
 <?php  require_once 'php/controller/config.php'; ?>
 
       <?php include 'side-bar.php'; ?>

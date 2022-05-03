@@ -72,11 +72,11 @@
 	?>
                   
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="email"  placeholder="Your Email Address" required >
+                                    <input type="text" class="form-control" name="email"  placeholder="Your Email Address" >
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password"  placeholder="Password" required>
+                                    <input type="password" class="form-control" name="password"  placeholder="Password" id="myInput" >
                                     <span class="md-line"></span>
                                 </div>
                                 <?php
@@ -93,11 +93,23 @@
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
                                         <div class="checkbox-fade fade-in-primary">
-                                            <!-- <label>
-                                                <input type="checkbox" value="">
+                                            <label>
+                                                <input type="checkbox" value="" onclick="myFunction()">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label> -->
+                                                <span class="text-inverse">Show Passowrd</span>
+  <script>
+
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">

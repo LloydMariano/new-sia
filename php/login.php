@@ -8,6 +8,7 @@
 			$email = $_POST['email'];
 			// md5 encrypted
 			// $password = md5($_POST['password']);
+
 			$password = $_POST['password'];
 			$sql = "SELECT * FROM `user_tbl` WHERE `email`=? AND `password`=? ";
 			$query = $dbh->prepare($sql);
@@ -15,11 +16,11 @@
 			$row = $query->rowCount();
 			$fetch = $query->fetch();
 
-			
 			if($row > 0){
 				$_SESSION['user'] = $fetch['user_id'];
-				header("location: /new-sia/home.php");
-			} else{
+				header("location: /new-sia/home.php");	
+			}
+			else{
 				echo "
 				<script>alert('Invalid email or password')</script>
 				<script>window.location = '/new-sia/index.php'</script>
@@ -32,5 +33,7 @@
 				<script>window.location = '/new-sia/index.php'</script>
 			";
 		}
+
+
 	}
 ?>

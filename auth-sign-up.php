@@ -64,7 +64,7 @@
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                    <input type="password" class="form-control" name="password" placeholder="Password" id="myInput"  required>
                                     <span class="md-line"></span>
                                 </div>
                                 <?php
@@ -77,7 +77,30 @@
 					//Unsetting the 'success' session after displaying the message. 
 					unset($_SESSION['success']);
 					}
-				?>                    
+				?>       
+                                   <div class="row m-t-25 text-left">
+                                    <div class="col-sm-7 col-xs-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="" onclick="myFunction()">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Show Passowrd</span>
+  <script>
+
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>             
                                     <div class="row m-t-30">
                                     <div class="col-md-12">
                                       <button type="submit" name="sign_btn" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>

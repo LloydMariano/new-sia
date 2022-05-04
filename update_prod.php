@@ -131,8 +131,8 @@ if($query->rowCount() >0)
                             </div>
  <?php }} ?>  
                         <div class="button">
-                            <button  name="update" class="btn btn-success btn-round">Submit</button>
-                            <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
+                            <button  name="update" class="btn btn-success btn-round">Update</button>
+                            <button  class="btn btn-danger btn-round" onclick="goBack()">Refresh</button>
                             <script>
                                      function goBack() {
                                                window.history.back();

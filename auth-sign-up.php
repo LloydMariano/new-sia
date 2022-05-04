@@ -84,7 +84,7 @@
                                             <label>
                                                 <input type="checkbox" value="" onclick="myFunction()">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Show Passowrd</span>
+                                                <span class="text-inverse">Show Password</span>
   <script>
 
 function myFunction() {

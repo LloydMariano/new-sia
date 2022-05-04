@@ -76,7 +76,7 @@
                             </div>
 
                         <div class="button">
-                            <button  name="add-prod" class="btn btn-success btn-round">Submit</button>
+                            <button  name="add-prod" class="btn btn-success btn-round">Save</button>
                             
                             <button  class="btn btn-danger btn-round" onclick="goBack()">Cancel</button>
                             <script>

@@ -97,13 +97,31 @@ if($query->rowCount() >0)
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password"  placeholder="New Password" required >
+                                    <input type="password" class="form-control" name="password" id="myInput" placeholder="New Password" required >
                                     <span class="md-line"></span>
                                 </div>
 			
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
-                                        
+                                    <div class="checkbox-fade fade-in-primary">
+                                    <label>
+                                                <input type="checkbox" value="" onclick="myFunction()">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Show Password</span>
+  <script>
+
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+                                            </label>               
+                                            </div>
                                     </div>
                                 </div>
          <?php }} ?>  

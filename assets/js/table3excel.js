@@ -119,7 +119,7 @@
 	 * results to `<table data-excel-name="Another table">...</table>`.
 	 */
 	var defaultOptions = {
-	  newfileName: 'INVENTORY', 
+	  newfileName: 'INVOICE', 
 	  tableNameDataAttribute: 'excel-name',
 
 	  /**
@@ -141,17 +141,17 @@
 	var typeHandlers = [_list2.default, _input2.default, _number2.default, _date2.default, _boolean2.default];
 
 	/**
-	 * Creates a `Table2Excel` object to export HTMLTableElements
+	 * Creates a `Table3Excel` object to export HTMLTableElements
 	 * to a xlsx-file via its function `export`.
 	 */
 
-	var Table2Excel = function () {
+	var Table3Excel = function () {
 	  /**
 	   * @param {object} options - Overrides the default options.
 	   */
-	  function Table2Excel() {
+	  function Table3Excel() {
 	    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	    (0, _classCallCheck3.default)(this, Table2Excel);
+	    (0, _classCallCheck3.default)(this, Table3Excel);
 
 	    (0, _extends3.default)(this, defaultOptions, options);
 	  }
@@ -164,7 +164,7 @@
 	   */
 
 
-	  (0, _createClass3.default)(Table2Excel, [{
+	  (0, _createClass3.default)(Table3Excel, [{
 	    key: 'export',
 	    value: function _export(tables) {
 	      var fileName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.newfileName;
@@ -324,14 +324,14 @@
 	      (0, _filesaver.saveAs)(blob, fileName + '.xlsx');
 	    }
 	  }]);
-	  return Table2Excel;
+	  return Table3Excel;
 	}();
 
 	// add global reference to `window` if defined
 
 
-	exports.default = Table2Excel;
-	if (window) window.Table2Excel = Table2Excel;
+	exports.default = Table3Excel;
+	if (window) window.Table3Excel = Table3Excel;
 
 	/**
 	 * Adds the type handler to the beginning of the list of type handlers.
@@ -347,7 +347,7 @@
 	 * * @returns {object} - Cell object (see: https://github.com/SheetJS/js-xlsx#cell-object)
 	 * * or `null` iff the cell doesn't fulfill the criteria of the type handler.
 	 */
-	Table2Excel.extend = function extendCellTypes(typeHandler) {
+	Table3Excel.extend = function extendCellTypes(typeHandler) {
 	  typeHandlers.unshift(typeHandler);
 	};
 

@@ -115,8 +115,8 @@
 
 <script>
     document.getElementById('export').addEventListener('click', function() {
-        var table2excel = new Table2Excel();
-  table2excel.export(document.querySelectorAll("#tb"));
+        var table3excel = new Table3Excel();
+  table3excel.export(document.querySelectorAll("#tb"));
     });
   
 </script>
@@ -142,7 +142,7 @@
 <script src="assets/js/pcoded.min.js"></script>
 <script src="assets/js/vartical-demo.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/js/table2excel.js"></script>
+<script src="assets/js/table3excel.js"></script>
 </body>
 
 </html>

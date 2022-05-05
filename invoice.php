@@ -50,9 +50,10 @@
                             <!-- Tab panes -->
                             <div class="tab-content card-block">
                                 <div class="tab-pane active" id="home3" role="tabpanel">
-
+                                <button id="export" class="btn btn-primary btn-md d-justify-end waves-effect text-center m-b-5" style="width: 20%; margin-left: 80%;">Export as EXCEL</button>
+                                    <br><br>
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table id="tb" class="table">
                                             <tr>
                                             <th>Customer Name</th>
                                                 <th>Transaction Code</th>
@@ -112,7 +113,13 @@
 </div>
 </div>
 
-
+<script>
+    document.getElementById('export').addEventListener('click', function() {
+        var table2excel = new Table2Excel();
+  table2excel.export(document.querySelectorAll("#tb"));
+    });
+  
+</script>
 <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
@@ -135,6 +142,7 @@
 <script src="assets/js/pcoded.min.js"></script>
 <script src="assets/js/vartical-demo.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/table2excel.js"></script>
 </body>
 
 </html>

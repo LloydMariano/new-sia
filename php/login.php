@@ -4,15 +4,15 @@
 	require_once 'controller/config.php';
 	
 	if(ISSET($_POST['login'])){
-		if($_POST['email'] != "" || $_POST['password'] != ""){
-			$email = $_POST['email'];
+		if($_POST['username'] != "" || $_POST['password'] != ""){
+			$username = $_POST['username'];
 			// md5 encrypted
 			// $password = md5($_POST['password']);
 
 			$password = $_POST['password'];
-			$sql = "SELECT * FROM `user_tbl` WHERE `email`=? AND `password`=? ";
+			$sql = "SELECT * FROM `user_tbl` WHERE `username`=? AND `password`=? ";
 			$query = $dbh->prepare($sql);
-			$query->execute(array($email,$password));
+			$query->execute(array($username,$password));
 			$row = $query->rowCount();
 			$fetch = $query->fetch();
 

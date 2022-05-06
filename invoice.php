@@ -51,7 +51,7 @@
                             <div class="tab-content card-block">
                                 <div class="tab-pane active" id="home3" role="tabpanel">
                                 <button id="export" class="btn btn-primary btn-md d-justify-end waves-effect text-center m-b-5" style="width: 20%; margin-left: 80%;">Export as EXCEL</button>
-                                    <br><br>
+                                    <br>
                                     <div class="table-responsive">
                                         <table id="tb" class="table">
                                             <tr>

@@ -114,7 +114,7 @@
 				$sql->execute();
 				$fetch = $sql->fetch();
 	?>
-                       <span><?php echo $fetch['firstname']." ". $fetch['lastname']?> </span>   
+                       <span><?php echo $fetch['fullname']." "?> </span>   
                                    <i class="ti-angle-down"></i>
                                </a>
 

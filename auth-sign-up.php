@@ -52,11 +52,11 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="firstname" placeholder="Firstname" required>
+                                    <input type="text" class="form-control" name="username" placeholder="Username" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="lastname"  placeholder="Lastname" required>
+                                    <input type="text" class="form-control" name="fullname"  placeholder="Full Name" required>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">

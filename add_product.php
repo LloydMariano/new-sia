@@ -50,22 +50,27 @@
                                 <div class="form">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
+                                     <span>Product name</span>
                                         <input type="text" class="form-control"
                                         placeholder="PRODUCT NAME" name="prod_name" required>
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Price</span>
                                         <input type="number" class="form-control"
                                         placeholder="PRODUCT PRICE" name="prod_price" required>
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Quantity</span>
                                         <input type="number" class="form-control"
                                         placeholder="PRODUCT QUANTITY" name="prod_qty" required>
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Date Received</span>
                                         <input type="date" class="form-control"
                                         placeholder="Date Received" name="date_received" required>
                                     </div>
                                     <div class="col-sm-6">
+                                        <span>Expiration Date</span>
                                         <input type="date" class="form-control"
                                         placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" required>
                                     </div>

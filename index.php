@@ -72,7 +72,7 @@
 	?>
                   
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="username"  placeholder="Your Email Address" >
+                                    <input type="text" class="form-control" name="username"  placeholder="username" >
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">

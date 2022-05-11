@@ -50,18 +50,22 @@
                                 <div class="form">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
+                                    <span>Customer</span>
                                         <input type="text" class="form-control"
                                         placeholder="CUSTOMER NAME" name="customer_name" required>
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Transaction code</span>
                                         <input type="text" class="form-control"
                                         placeholder="TRANSACTION CODE" name="trans_code" required>
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Total amount</span>
                                         <input type="text" class="form-control"
                                         placeholder=" TOTAL PRODUCT AMOUNT" name="total" required >
                                     </div>
                                     <div class="col-sm-6">
+                                    <span>Transaction Date</span>
                                         <input type="date" class="form-control"
                                         placeholder="TRANSACTION DATE" name="trans_date" required>
                                     </div>

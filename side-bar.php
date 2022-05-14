@@ -1,5 +1,5 @@
 <?php require_once 'php/controller/config.php';   ?>
-    <?php   session_start();  ?>
+    <?php session_start();  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,6 +150,12 @@
                             </ul>
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Products &amp; Invoice</div>
                             <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                                        <a href="pos.php">
+                                            <span class="pcoded-micon"><i class="ti-shopping-cart"></i><b>D</b></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">POS</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
                                     <li>
                                         <a href="products.php">
                                             <span class="pcoded-micon"><i class="ti-clipboard"></i><b>D</b></span>

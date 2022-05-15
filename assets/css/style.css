@@ -71,10 +71,6 @@
 
     .media-left {
       padding-right: 20px; }
-  .group{
-    width: 50%;
-  }
-
 
     /**====== Custom css end ======**/
     /**  =====================
@@ -1383,8 +1379,8 @@
       background-color: #4680FE; }
 
     .table-responsive {
-      display: block;
-      width: 50%;
+      display: inline-block;
+      width: 100%;
       overflow-x: auto; }
 
     .table.table-xl td,
@@ -3273,9 +3269,9 @@
 
       .col-sm-6 {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 60%;
-        flex: 0 0 60%;
-        max-width: 60%; }
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%; }
 
       .col-sm-7 {
         -webkit-box-flex: 0;
@@ -8501,18 +8497,12 @@
       margin-right: 5%;
       margin-left: 5%;
     }
-    .form1{
-      margin-top: 5%;
-      margin-right: 5%;
-      margin-left: 5%;
-    }
     .head{
       margin-top: 20px;
       margin-left: 5%;
     }
     .col-sm-6{
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding-top: 50px;
     }
     .col-sm-10{
       padding-top: 50px;
@@ -8523,16 +8513,10 @@
       margin-right: 20px;
       margin-bottom: 20px;
     }
-    .btn{
-        margin-left: 5px;
-    }
     .show-notification{
       padding-bottom: 15px;
 
     }
-    .col-sm-6{
-      padding-right: -50px;
-    
     /**  =====================
           Theme-Buttons css start
     ==========================  **/

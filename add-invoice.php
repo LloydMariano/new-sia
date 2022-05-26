@@ -50,7 +50,7 @@
                                 <div class="form">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                    <span>Customer</span>
+                                    <span>Name</span>
                                         <input type="text" class="form-control"
                                         placeholder="CUSTOMER NAME" name="customer_name" required>
                                     </div>

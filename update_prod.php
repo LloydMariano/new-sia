@@ -5,29 +5,30 @@ require_once 'php/controller/config.php';
 if(isset($_POST['update'])){
 
 $prod_id = intval($_GET['id']);
-$prod_name  = $_POST ['prod_name'];
-$prod_price = $_POST ['prod_price'];
-$prod_qty = $_POST ['prod_qty'];
-$date_received = $_POST ['date_received'];
-$prod_exp = $_POST ['prod_exp'];
+$prod_name = $_POST ['prod_name'];
+$price = $_POST ['price'];
+$qty = $_POST ['qty'];
+$supplier= $_POST ['supplier'];
+$prod_code = $_POST ['prod_code'];
+$cost = $_POST ['cost'];
 
 
-
-$sql = " UPDATE product_tbl SET prod_name=:prod_name, prod_price=:prod_price, prod_qty=:prod_qty,
-        date_received=:date_received, prod_exp=:prod_exp  WHERE product_id=:uid";
+$sql = " UPDATE product_tbl SET prod_name=:prod_name,  price=:price,  qty=:qty, supplier=:supplier,
+prod_code=:prod_code, cost =:cost  WHERE product_id=:uid";
 
 $query = $dbh->prepare($sql);
 
 $query->bindParam('prod_name',$prod_name,PDO::PARAM_STR);
-$query->bindParam('prod_price',$prod_price ,PDO::PARAM_STR);
-$query->bindParam('prod_qty',$prod_qty ,PDO::PARAM_STR);
-$query->bindParam('date_received',$date_received ,PDO::PARAM_STR);
-$query->bindParam('prod_exp',$prod_exp ,PDO::PARAM_STR);
+$query->bindParam('prod_code',$prod_code ,PDO::PARAM_STR);
+$query->bindParam('cost',$cost ,PDO::PARAM_STR);
+$query->bindParam('price',$price ,PDO::PARAM_STR);
+$query->bindParam('supplier',$supplier ,PDO::PARAM_STR);
+$query->bindParam('qty',$qty ,PDO::PARAM_STR);
 $query->bindParam('uid',$prod_id, PDO::PARAM_STR);
 
 $query->execute();
 echo "<script>alert('Record Updated successfully');</script>";
-// Code for redirection
+//Code for redirection
 echo "<script>window.location.href='/new-sia/products.php'</script>";
 }
 
@@ -104,32 +105,69 @@ if($query->rowCount() >0)
                                     <span>Product name</span>
                                         <input type="text" class="form-control"
                                         placeholder="PRODUCT NAME" name="prod_name"
-                                        value="<?php echo htmlentities($result->prod_name); ?> " required>
+                                        value="<?php echo htmlentities($result->prod_name ); ?> " required>
                                     </div>
                                     <div class="col-sm-6">
                                     <span>Price</span>
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT PRICE" name="prod_price"
-                                        value="<?php echo htmlentities($result->prod_price); ?>" required>
+                                        placeholder="PRODUCT PRICE" name="price"
+                                        value="<?php echo htmlentities($result->price); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                     <span>Quantity</span>
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT QUANTITY" name="prod_qty"
-                                        value="<?php echo htmlentities($result->prod_qty); ?>" required>
+                                        placeholder="PRODUCT QUANTITY" name="qty"
+                                        value="<?php echo htmlentities($result->qty); ?>" required>
+                                    </div>
+                                    <?php }} ?>  
+                                    <div class="col-sm-6">
+                                    <span>Invoice</span>
+                                    <select class="form-control"  name="supplier" required>
+                <?php
+    include('php/config/connection.php');
+	$result = $db->prepare("SELECT * FROM invoice_tbl");
+		// $result->bindParam(':userid', $res);
+		$result->execute();
+            
+	?>                      <option>  </option>
+		      <?php for($i=0; $row = $result->fetch(); $i++){ ?>     <option value="<?php echo $row['customer_name']; ?>" required> <?php echo $row['customer_name']; ?></option>
+             
+             <?php       
+	}
+	?>
+        </div>
+<?php
+$prod_id = intval($_GET['id']);
+$sql = "SELECT * from  product_tbl WHERE product_id=:uid";
+$query = $dbh->prepare($sql);
+$query->bindParam('uid',$prod_id,PDO::PARAM_STR);
+$query->execute();
+$row=$query->fetchAll(PDO::FETCH_OBJ);
+
+
+$cnt=1;
+if($query->rowCount() >0)
+{
+  foreach($row as $result);
+{
+?>
+                                     <div class="col-sm-6">
+                                        <span></span>
+                                        <input type="hidden" class="form-control">
                                     </div>
                                     <div class="col-sm-6">
-                                    <span>Date Received</span>
-                                        <input type="date" class="form-control"
-                                        placeholder="Date Received" name="date_received" 
-                                        value="<?php echo htmlentities($result->date_received); ?>" required>
+                                    <span>Product Code </span>
+                                        <input type="number" class="form-control"
+                                        name="prod_code" 
+                                        value="<?php echo htmlentities($result->prod_code); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
-                                    <span>Expiration Date </span>
-                                        <input type="date" class="form-control"
-                                        placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" 
-                                        value="<?php echo htmlentities($result->prod_exp); ?>" required>
+                                    <span>Product cost </span>
+                                        <input type="number" class="form-control"
+                                            name="cost" 
+                                        value="<?php echo htmlentities($result->cost); ?>" required>
                                     </div>
+
                                     </div>
                                     
                                 </div>

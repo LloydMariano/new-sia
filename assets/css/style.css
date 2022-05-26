@@ -14892,4 +14892,36 @@
       .add-task-card .to-do-list h6 span {
         display: inline-block; } }
 
+        /*POS CSS */
+
+        .v-price{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          flex-grow: 1;
+          border-top: 1px solid #a1a1a1;
+        }
+        .v-price button{
+          width: 100%;
+          background: #317C64;
+          font-weight: 600;
+          color: #fff;
+        }
+        /* checkout price */
+.checkout-price{
+  padding: 0px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-price h6 span{
+  color:#a1a1a1;
+}
+
+.sheet{
+  width: 19.8%;
+  margin-top: 13%;
+}
+        
+
     /*# sourceMappingURL=style.css.map */

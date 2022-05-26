@@ -52,27 +52,48 @@
                                     <div class="col-sm-6">
                                      <span>Product name</span>
                                         <input type="text" class="form-control"
-                                        placeholder="PRODUCT NAME" name="prod_name" required>
+                                        placeholder="PRODUCT NAME" name="name" required>
                                     </div>
                                     <div class="col-sm-6">
                                     <span>Price</span>
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT PRICE" name="prod_price" required>
+                                        placeholder="PRODUCT PRICE" name="price" required>
                                     </div>
                                     <div class="col-sm-6">
                                     <span>Quantity</span>
                                         <input type="number" class="form-control"
-                                        placeholder="PRODUCT QUANTITY" name="prod_qty" required>
+                                        placeholder="PRODUCT QUANTITY" name="qty" required>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                    <span>Invoice</span>
+                                    <select class="form-control" name="customer_name" required>
+                <?php
+    include('php/config/connection.php');
+	$result = $db->prepare("SELECT * FROM invoice_tbl");
+		// $result->bindParam(':userid', $res);
+		$result->execute();
+		for($i=0; $row = $result->fetch(); $i++){
+	?>     
+		            <option value="<?php echo $row['customer_name']; ?>"> <?php echo $row['customer_name']; ?></option>
+             <?php       
+	}
+	?>
+        </div>
+                                        <div class="col-sm-6">
+                                        <span></span>
+                                        <input type="hidden" class="form-control">
+                                    </div>
+                                 
+                                    <div class="col-sm-6">
+                                        <span>Product Code</span>
+                                        <input type="text" class="form-control"
+                                        placeholder="Product code" name="code" required>
                                     </div>
                                     <div class="col-sm-6">
-                                    <span>Date Received</span>
-                                        <input type="date" class="form-control"
-                                        placeholder="Date Received" name="date_received" required>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <span>Expiration Date</span>
-                                        <input type="date" class="form-control"
-                                        placeholder="PRODUCT EXPIRATION DATE" name="prod_exp" required>
+                                        <span>Product Cost</span>
+                                        <input type="number" class="form-control"
+                                        placeholder="Product code" name="cost" required>
                                     </div>
                                 
                                     </div>

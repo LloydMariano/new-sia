@@ -57,11 +57,12 @@
                                         <table id="tb" class="table">
                                             <tr>
                         
-                                            <th>Product Name</th>
-                                                <th>Product Price</th>
+                                               <th>Product Name</th>
+                                                <th>Product Code</th>
+                                                <th>Product Cost</th>
+                                                <th>price</th>    
                                                 <th>Product Quantity</th>
-                                                <th>Date Received</th>
-                                                <th>Expiration Date</th>
+                                                <th>Supplier</th>
                                                 <th>Action</th>
                                             </tr>
 <?php
@@ -79,10 +80,11 @@
                                             <tr>
 
                                                 <td><?php echo htmlentities($result->prod_name); ?></td>
-                                                <td><?php echo htmlentities($result->prod_price); ?></td>
-                                                <td><?php echo htmlentities($result->prod_qty); ?></td>
-                                                <td><?php echo htmlentities($result->date_received); ?></td>
-                                                <td><?php echo htmlentities($result->prod_exp); ?></td>
+                                                <td><?php echo htmlentities($result->prod_code); ?></td>
+                                                <td><?php echo htmlentities($result->cost); ?></td>
+                                                <td><?php echo htmlentities($result->price); ?></td>      
+                                                <td><?php echo htmlentities($result->qty); ?></td>
+                                                <td><?php echo htmlentities($result->supplier); ?></td>
                                                 <td>
                                                     <div class="edit">
                                                         <a class="up_btn" href="update_prod.php?id=<?php echo htmlentities($result->product_id); ?>"> <button class="update"><i class="ti-pencil-alt"></i></button></a>

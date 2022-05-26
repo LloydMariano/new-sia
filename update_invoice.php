@@ -97,7 +97,7 @@ if($query->rowCount() >0)
                                 <div class="form">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                    <span>Customer Name</span>
+                                    <span>Name</span>
                                         <input type="text" class="form-control"
                                         placeholder="CUSTOMER NAME" name="customer_name"
                                         value="<?php echo htmlentities($result->customer_name); ?>" required>

@@ -148,10 +148,32 @@
                                     </ul>
                                 </li>
                             </ul>
+
+                            <?php
+function createRandomPassword() {
+	$chars = "003232303232023232023456789";
+	srand((double)microtime()*1000000);
+	$i = 0;
+	$pass = '' ;
+	while ($i <= 7) {
+
+		$num = rand() % 33;
+
+		$tmp = substr($chars, $num, 1);
+
+		$pass = $pass . $tmp;
+
+		$i++;
+
+	}
+	return $pass;
+}
+$finalcode='RS-'.createRandomPassword();
+?>
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Products &amp; Invoice</div>
                             <ul class="pcoded-item pcoded-left-item">
                             <li>
-                                        <a href="pos.php">
+                                        <a  href="pos.php?id=credit&invoice=<?php echo $finalcode ?>">
                                             <span class="pcoded-micon"><i class="ti-shopping-cart"></i><b>D</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.dash.main">POS</span>
                                             <span class="pcoded-mcaret"></span>
@@ -185,7 +207,9 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>    
+                                     
                                         </ul>
+                                 
                     </nav>
     </body>
     </html>

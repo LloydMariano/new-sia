@@ -55,7 +55,7 @@
                                     <div class="table-responsive">
                                         <table id="tb" class="table">
                                             <tr>
-                                            <th>Customer Name</th>
+                                                <th>Name</th>
                                                 <th>Transaction Code</th>
                                                 <th>Total Amount</th>
                                                 <th>Date of transaction</th>
